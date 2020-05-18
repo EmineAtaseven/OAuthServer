@@ -80,9 +80,15 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
    }
    @Override
    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-      clients.inMemory().withClient(clientid).secret(clientSecret).scopes("read", "write")
-         .authorizedGrantTypes("password", "refresh_token").accessTokenValiditySeconds(20000)
-         .refreshTokenValiditySeconds(20000);
-
+      clients
+			  .inMemory()
+			  .withClient(clientid).secret(clientSecret)
+			  .authorizedGrantTypes("client_credentials", "authorization_code", "refresh_token")
+			  .authorities("READ_ONLY_CLIENT")
+			  .scopes("read", "write", "message.read", "message.write")
+			  .resourceIds("oauth2-resource")
+			  .redirectUris("http://localhost:8081/login")
+			  .accessTokenValiditySeconds(10)
+			  .refreshTokenValiditySeconds(20000);
    }
 } 

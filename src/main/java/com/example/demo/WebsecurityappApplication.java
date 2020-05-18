@@ -18,7 +18,7 @@ public class WebsecurityappApplication {
    }
    
    @RequestMapping(value = "/products")
-   public String getProductName() {
-      return "Honey";   
+   public String[] getProductName() {
+      return new String[]{"Honey", "Message 2"};
    }
 }
