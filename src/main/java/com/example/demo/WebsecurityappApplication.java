@@ -10,15 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableAuthorizationServer
 @EnableResourceServer
-@RestController
+//@RestController
 public class WebsecurityappApplication {
 
 	public static void main(String[] args) {
       SpringApplication.run(WebsecurityappApplication.class, args);
    }
-   
+   /*
    @RequestMapping(value = "/products")
    public String[] getProductName() {
       return new String[]{"Honey", "Message 2"};
    }
+
+    */
 }
+
+

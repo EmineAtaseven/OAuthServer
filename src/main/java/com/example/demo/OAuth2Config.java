@@ -87,7 +87,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 			  .authorities("READ_ONLY_CLIENT")
 			  .scopes("read", "write", "message.read", "message.write")
 			  .resourceIds("oauth2-resource")
-			  .redirectUris("http://localhost:8081/login")
+			  .redirectUris("http://localhost:9090/login")
 			  .accessTokenValiditySeconds(10)
 			  .refreshTokenValiditySeconds(20000);
    }
